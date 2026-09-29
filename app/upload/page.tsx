@@ -27,6 +27,7 @@ export default function UploadPage() {
         let formattedData = [];
 
         if (type === 'settlements') {
+          // 정산내역 엑셀 헤더 매핑
           formattedData = data.map((row) => ({
             date: row['날짜'] || null,
             nickname: String(row['닉네임'] || '').trim(),
@@ -38,6 +39,7 @@ export default function UploadPage() {
             memo: row['비고'] || '',
           }));
         } else {
+          // 출고현황 엑셀 헤더 매핑
           formattedData = data.map((row) => ({
             date: row['날짜'] || null,
             nickname: String(row['닉네임'] || '').trim(),
